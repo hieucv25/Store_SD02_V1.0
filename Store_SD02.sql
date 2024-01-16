@@ -295,3 +295,9 @@ alter table ThongTinVanChuyen ADD CONSTRAINT FK_ThongTinVanChuyen FOREIGN KEY(Id
 alter table TroChuyen ADD Constraint FK_Chat_1 Foreign Key(IdKhachHang) REFERENCES KhachHang(Id)
 
 alter table TroChuyen ADD CONSTRAINT FK_Chat_2 FOREIGN KEY(idNhanVien) REFERENCES NhanVien(Id)
+
+-- Tạo khoá ngoại cho bảng sản phẩm - khuyễn mãi
+
+alter table SanPham_KhuyenMai ADD Constraint FK_SanPham_KhuyenMai_1 Foreign Key(IdSanPham) References SanPham(Id)
+
+alter table SanPham_KhuyenMai Add Constraint FK_SanPham_KhuyenMai_2 Foreign Key(IdKhuyenMai) References KhuyenMai(Id)
