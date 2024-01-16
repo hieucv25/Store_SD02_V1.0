@@ -209,13 +209,21 @@ Create Table SanPham_KhuyenMai(
     IdKhuyenMai int
 )
 
-create table TroChuyen(
+Create Table TroChuyen(
     Id int identity PRIMARY KEY,
     IdKhachHang int,
     IdNhanVien int,
     NoiDung nvarchar(250),
     ThoiGianGui Datetime,
 )
+
+Create Table DanhSachYeuThich(
+	Id int identity Primary Key,
+	IdKhachHang int,
+	IdSanPham int,
+	NgayTao datetime
+)
+
 
 
 -- Tạo khoá ngoại cho các bảng
@@ -301,3 +309,9 @@ alter table TroChuyen ADD CONSTRAINT FK_Chat_2 FOREIGN KEY(idNhanVien) REFERENCE
 alter table SanPham_KhuyenMai ADD Constraint FK_SanPham_KhuyenMai_1 Foreign Key(IdSanPham) References SanPham(Id)
 
 alter table SanPham_KhuyenMai Add Constraint FK_SanPham_KhuyenMai_2 Foreign Key(IdKhuyenMai) References KhuyenMai(Id)
+
+-- Tạo khoá ngoại cho bảng danh sách yêu thích
+
+alter table DanhSachYeuThich ADD Constraint FK_DanhSachYeuThich_SanPham Foreign key(IdSanPham) References SanPham(Id)
+
+alter table DanhSachYeuThich ADD Constraint FK_DanhSachYeuThich_KhachHang Foreign Key(IdKhachHang) References KhachHang(Id)
