@@ -315,3 +315,9 @@ alter table SanPham_KhuyenMai Add Constraint FK_SanPham_KhuyenMai_2 Foreign Key(
 alter table DanhSachYeuThich ADD Constraint FK_DanhSachYeuThich_SanPham Foreign key(IdSanPham) References SanPham(Id)
 
 alter table DanhSachYeuThich ADD Constraint FK_DanhSachYeuThich_KhachHang Foreign Key(IdKhachHang) References KhachHang(Id)
+
+-- Thêm thuộc tính mật khẩu mã hoá cho Nhân Viên và Khách Hàng
+
+alter table NhanVien add MatKhauMaHoa varchar(250)
+
+alter table KhachHang add MatKhauMaHoa varchar(250)
