@@ -321,3 +321,7 @@ alter table DanhSachYeuThich ADD Constraint FK_DanhSachYeuThich_KhachHang Foreig
 alter table NhanVien add MatKhauMaHoa varchar(250)
 
 alter table KhachHang add MatKhauMaHoa varchar(250)
+
+-- Sửa kiểu dữ liệu của thuộc tính danh mục trong bảng sản phẩm bit -> int
+
+alter table SanPham alter COLUMN DanhMuc int
