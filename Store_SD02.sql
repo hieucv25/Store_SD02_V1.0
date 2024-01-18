@@ -368,4 +368,20 @@ create table TroChuyenChiTiet(
 alter table TroChuyenChiTiet add Constraint FK_TroChuyen Foreign Key(idTroChuyen) references TroChuyen(id)
 alter table TroChuyenChiTiet add LinkFile varchar(max) default null -- link ảnh hoặc tệp tin nếu có
 
- 
+select * from TroChuyen
+
+insert into ChucVu(TenChucVu) values
+('STAFF'),
+('ADMIN')
+
+
+insert into NhanVien(MaNV,HoTen,SDT,NgaySinh,TrangThai,Email,MatKhau,NgayTao,IdChucVu,MatKhauMaHoa) values 
+('NV1','Chu Văn Hiếu','0359693203','2003/08/20',0,'chuhieu05@gmail.com','12345',GETDATE(),2,'$2a$12$LXiqdQLcMVOAp5cuo1ejne8GhjhdkjKFQqVSo1lxHANeZTJ/uxhIW'),
+('NV2','Nguyễn Văn Nam','0379693203','1998/06/10',0,'nguyennam44@gmail.com','123456',GETDATE(),1,'$2a$12$TdaMnaaCU3/B1Ao7sw8DGuuJFob99.JwBA2vcGoT5ulfN3sYIDqYm')
+
+
+insert into KhachHang(MaKH,HoTen,SDT,NgaySinh,TrangThai,Email,MatKhau,NgayTao,LoaiKhachHang,GioiTinh,MatKhauMaHoa) values
+('KH1','Nguyen Van Tu','037289994','1997/12/01',0,'tunv@gmail.com','abcdef',GETDATE(),0,0,'$2a$12$DM64cbiaRINgeAz1u5hsFOOHXyp2kqXHwFv7sZ9rBEoDeYc/AxopO'),
+('KH2','Le Ngoc Anh','097289994','1999/12/09',0,'anhnl22@gmail.com','abcdef',GETDATE(),0,0,'$2a$12$DM64cbiaRINgeAz1u5hsFOOHXyp2kqXHwFv7sZ9rBEoDeYc/AxopO')
+
+
