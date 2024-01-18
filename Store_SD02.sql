@@ -366,4 +366,6 @@ create table TroChuyenChiTiet(
 )
 
 alter table TroChuyenChiTiet add Constraint FK_TroChuyen Foreign Key(idTroChuyen) references TroChuyen(id)
+alter table TroChuyenChiTiet add LinkFile varchar(max) default null -- link ảnh hoặc tệp tin nếu có
+
  
