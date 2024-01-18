@@ -345,4 +345,25 @@ Drop TABLE SanPham_NhaCungCap
  alter table ThongTinVanChuyen add idDiaChi int
 
  alter table ThongTinVanChuyen add Constraint FK_DiaChi Foreign Key(idDiaChi) references DiaChi(id)
+
+-- Cập Nhật Bảng TroChuyen
+
+alter table TroChuyen drop column NoiDung
+alter table TroChuyen drop column ThoiGianGui
+alter table TroChuyen add NgayTao datetime
+alter table TroChuyen add TrangThai int
+
+-- Tạo Bảng TroChuyenChiTiet
+
+create table TroChuyenChiTiet(
+	Id int identity primary key,
+	NguoiGui bit, -- nhân viên hoặc khách hàng
+	IdNguoiGui int,
+	NoiDung nvarchar(250),
+	ThoiGianGui datetime,
+	LoaiTinNhan int,-- hình ảnh, văn bản hoặc file
+	idTroChuyen int,
+)
+
+alter table TroChuyenChiTiet add Constraint FK_TroChuyen Foreign Key(idTroChuyen) references TroChuyen(id)
  
