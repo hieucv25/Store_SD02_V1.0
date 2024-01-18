@@ -334,4 +334,15 @@ alter table SanPham_NhaCungCap drop Constraint FK_Sp_Ncc_2
 
 Drop TABLE SanPham_NhaCungCap
  
+
+ -- Xoá các thuộc tính Tinh_ThanhPho,Quan_Huyen,Xa_Phuong,DiaChiCuThe của bảng thông tin vận chuyển
+ -- Thay thế bằng Id DiaChi
+ alter table ThongTinVanChuyen drop column Tinh_ThanhPho
+ alter table ThongTinVanChuyen drop column Quan_Huyen
+ alter table ThongTinVanChuyen drop column Xa_Phuong
+ alter table ThongTinVanChuyen drop column DiaChiCuThe
+
+ alter table ThongTinVanChuyen add idDiaChi int
+
+ alter table ThongTinVanChuyen add Constraint FK_DiaChi Foreign Key(idDiaChi) references DiaChi(id)
  
