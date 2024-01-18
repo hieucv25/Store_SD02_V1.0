@@ -325,3 +325,13 @@ alter table KhachHang add MatKhauMaHoa varchar(250)
 -- Sửa kiểu dữ liệu của thuộc tính danh mục trong bảng sản phẩm bit -> int
 
 alter table SanPham alter COLUMN DanhMuc int
+
+-- Xoá Bảng Sản Phẩm - Nhà Cung Cấp
+
+alter table SanPham_NhaCungCap drop Constraint FK_Sp_Ncc_1
+
+alter table SanPham_NhaCungCap drop Constraint FK_Sp_Ncc_2
+
+Drop TABLE SanPham_NhaCungCap
+ 
+ 
