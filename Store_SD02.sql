@@ -385,3 +385,36 @@ insert into KhachHang(MaKH,HoTen,SDT,NgaySinh,TrangThai,Email,MatKhau,NgayTao,Lo
 ('KH2','Le Ngoc Anh','097289994','1999/12/09',0,'anhnl22@gmail.com','abcdef',GETDATE(),0,0,'$2a$12$DM64cbiaRINgeAz1u5hsFOOHXyp2kqXHwFv7sZ9rBEoDeYc/AxopO')
 
 
+-- xoá thuộc tính size + màu sắc tại sản phẩm 
+alter table SanPham drop column size
+alter table SanPham drop Column MauSac
+-- tạo thêm 1 bảng sản phẩm chi tiết
+Create Table SanPhamChiTiet(
+	id int identity Primary Key,
+	idSanPham int,
+	MauSac nvarchar(250),
+	Size int
+)
+Alter table SanPhamChiTiet Add Constraint FK_SPTT Foreign Key (idSanPham) references SanPham(Id)
+-- Xoá bảng thông báo - Khách Hàng
+Alter Table ThongBao_KhachHang drop Constraint FK_ThongBao_1
+Alter Table ThongBao_KhachHang drop Constraint FK_ThongBao_2
+Drop Table ThongBao_KhachHang
+-- Thêm Khoá Ngoại Id Khách Hàng vào bảng thông báo
+Alter Table ThongBao add IdKhachHang int
+Alter Table ThongBao add Constraint FK_ThongBao_KhachHang Foreign Key(IdKhachHang) references KhachHang(id)
+-- Xoá Thuộc tính ảnh của sản phẩm, Thêm bảng AnhSanPham
+Alter Table SanPham drop column LinkAnh1
+Alter Table SanPham drop column LinkAnh2
+Alter Table SanPham drop column LinkAnh3
+Alter Table SanPham drop column LinkAnh4
+Alter Table SanPham drop column LinkAnh5
+
+Create Table AnhSanPham(
+  Id int identity Primary Key,
+  IdSanPham int,
+  LinkAnh varchar(250),
+)
+ALter table AnhSanPham add Constraint FK_Anh_SanPham Foreign Key (IdSanPham) references SanPham (Id)
+
+
