@@ -416,5 +416,7 @@ Create Table AnhSanPham(
   LinkAnh varchar(250),
 )
 ALter table AnhSanPham add Constraint FK_Anh_SanPham Foreign Key (IdSanPham) references SanPham (Id)
-
+-- update some field data in table SanPhamChiTiet
+alter table SanPhamChiTiet alter column Size varchar(5)
+alter table SanPhamChiTiet add ngayTao datetime
 
