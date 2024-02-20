@@ -419,4 +419,13 @@ ALter table AnhSanPham add Constraint FK_Anh_SanPham Foreign Key (IdSanPham) ref
 -- update some field data in table SanPhamChiTiet
 alter table SanPhamChiTiet alter column Size varchar(5)
 alter table SanPhamChiTiet add ngayTao datetime
+-- Tạo thêm bảng màu sắc
 
+create table MauSac(
+	id int Identity primary key,
+	ten nvarchar(250),
+)
+-- cập nhật khoá ngoại
+alter table SanPhamChiTiet drop column MauSac
+alter table SanPhamChiTiet add MauSac int
+alter table SanPhamChiTiet add constraint FK_MauSac foreign key (MauSac) references MauSac(id)
