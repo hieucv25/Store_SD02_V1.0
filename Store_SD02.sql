@@ -429,3 +429,4 @@ create table MauSac(
 alter table SanPhamChiTiet drop column MauSac
 alter table SanPhamChiTiet add MauSac int
 alter table SanPhamChiTiet add constraint FK_MauSac foreign key (MauSac) references MauSac(id)
+alter table SanPhamChiTiet add SoLuong int
