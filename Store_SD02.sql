@@ -436,3 +436,8 @@ Alter table ChiTietDonHang  drop Constraint FK_CTDH_SanPham
 Alter table ChiTietDonHang drop column idSanPham
 Alter table ChiTietDonHang add idSanPhamChiTiet int
 Alter table ChiTietDonHang Add Constraint FK_CTDH_SanPham  Foreign Key (idSanPhamChiTiet) references SanPhamChiTiet(Id)
+-- tương tự như chỉnh sửa ở trên
+alter table GioHangChiTiet drop CONSTRAINT FK_GioHangChiTiet_SanPham
+alter table GioHangChiTiet drop column IdSanPham
+alter table GioHangChiTiet add IdSanPhamChiTiet int
+alter table GioHangChiTiet ADD CONSTRAINT FK_GioHangChiTiet_SanPhamChiTiet FOREIGN KEY(IdSanPhamChiTiet) REFERENCES SanPhamChiTiet(Id)
