@@ -430,3 +430,9 @@ alter table SanPhamChiTiet drop column MauSac
 alter table SanPhamChiTiet add MauSac int
 alter table SanPhamChiTiet add constraint FK_MauSac foreign key (MauSac) references MauSac(id)
 alter table SanPhamChiTiet add SoLuong int
+
+-- xoá khoá ngoại id sản phẩm của bảng chi tiết đơn hàng thay bằng id chi tiết sản phẩm
+Alter table SanPhamChiTiet drop Constraint FK_SPTT
+Alter table SanPhamChiTiet drop column idSanPham
+Alter table SanPhamChiTiet add idSanPhamChiTiet int
+Alter table SanPhamChiTiet Add Constraint FK_SPCT Foreign Key (idSanPhamChiTiet) references SanPhamChiTiet(Id)
