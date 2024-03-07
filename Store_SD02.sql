@@ -441,3 +441,8 @@ alter table GioHangChiTiet drop CONSTRAINT FK_GioHangChiTiet_SanPham
 alter table GioHangChiTiet drop column IdSanPham
 alter table GioHangChiTiet add IdSanPhamChiTiet int
 alter table GioHangChiTiet ADD CONSTRAINT FK_GioHangChiTiet_SanPhamChiTiet FOREIGN KEY(IdSanPhamChiTiet) REFERENCES SanPhamChiTiet(Id)
+-- chỉnh sửa khoá ngoại cho bảng Ảnh Sản Phẩm
+alter table AnhSanPham drop constraint FK_Anh_SanPham
+alter table AnhSanPham drop column IdSanPham
+alter table AnhSanPham add IdSanPhamChiTiet int
+alter table AnhSanPham add constraint FK_Anh_ChiTietSanPham foreign key (IdSanPhamChiTiet) references SanPhamChiTiet(id)
