@@ -446,6 +446,5 @@ alter table AnhSanPham drop constraint FK_Anh_SanPham
 alter table AnhSanPham drop column IdSanPham
 alter table AnhSanPham add IdSanPhamChiTiet int
 alter table AnhSanPham add constraint FK_Anh_ChiTietSanPham foreign key (IdSanPhamChiTiet) references SanPhamChiTiet(id)
--- thêm thuộc tính tiền khách trả và tiền trả lại vào đơn hàng 
+-- thêm thuộc tính tiền khách trả vào đơn hàng 
 alter table DonHang add tienKhachTra money
-alter table DonHang add tienTraLai money
