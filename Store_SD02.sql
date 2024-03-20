@@ -450,4 +450,16 @@ alter table AnhSanPham add constraint FK_Anh_ChiTietSanPham foreign key (IdSanPh
 alter table DonHang add tienKhachTra money
 -- thêm sdt vào địa chỉ
 alter table DiaChi add sdt nvarchar(10)
-
+-- data insert thể loại
+INSERT INTO TheLoai(ten, MoTa) VALUES
+('Bóng Đá', 'Môn thể thao vua được yêu thích trên toàn thế giới với sự cạnh tranh gay gắt và đam mê mãnh liệt.'),
+('Bóng Bàn', 'Môn thể thao nhanh nhẹn và kỹ thuật, được đánh giá cao về sự tập trung và phản xạ.'),
+('Bóng Rổ', 'Môn thể thao đội hình đồng đội năng động và hấp dẫn, thu hút sự quan tâm của hàng triệu người hâm mộ.'),
+('Bóng Chuyền', 'Môn thể thao đội hình kỹ thuật và linh hoạt, đòi hỏi sự phối hợp và tinh thần đồng đội cao.'),
+('Bóng Chày', 'Môn thể thao đội hình cổ điển của nước Mỹ, nổi tiếng với sự mạnh mẽ và kỹ thuật.'),
+('Cầu Lông', 'Môn thể thao nhanh nhẹn và tinh tế, yêu cầu sự linh hoạt và kỹ thuật.'),
+('Tennis', 'Môn thể thao cá nhân đòi hỏi sự lanh lợi và kỹ thuật, phổ biến trên toàn thế giới.'),
+('Bóng Bàn', 'Môn thể thao nhanh nhẹn và kỹ thuật, được đánh giá cao về sự tập trung và phản xạ.'),
+('Gym', 'Hoạt động thể chất để cải thiện sức khỏe và vóc dáng, phổ biến trong cả giới nam và nữ.'),
+('Golf', 'Môn thể thao lịch sự và tĩnh lặng, yêu cầu sự kiên nhẫn và kỹ thuật.'),
+('Bơi Lội', 'Môn thể thao nước phổ biến, giúp cải thiện sức khỏe toàn diện và tăng cường sức bền.')
