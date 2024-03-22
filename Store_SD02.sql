@@ -463,3 +463,5 @@ INSERT INTO TheLoai(ten, MoTa) VALUES
 ('Gym', 'Hoạt động thể chất để cải thiện sức khỏe và vóc dáng, phổ biến trong cả giới nam và nữ.'),
 ('Golf', 'Môn thể thao lịch sự và tĩnh lặng, yêu cầu sự kiên nhẫn và kỹ thuật.'),
 ('Bơi Lội', 'Môn thể thao nước phổ biến, giúp cải thiện sức khỏe toàn diện và tăng cường sức bền.')
+-- thêm thuộc tính deafault vào bảng địa chỉ
+alter table DiaChi add deafault bit
