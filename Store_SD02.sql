@@ -466,3 +466,10 @@ INSERT INTO TheLoai(ten, MoTa) VALUES
 -- thêm thuộc tính deafault vào bảng địa chỉ
 alter table DiaChi add deafault bit
 sp_rename 'DiaChi.deafault', 'IsDefault','COLUMN';
+-- Xoá Khoá Ngoại Id Địa Chỉ Của Bảng Thông Tin Vận Chuyển
+alter table ThongTinVanChuyen drop constraint FK_DiaChi
+
+alter table ThongTinVanChuyen add Tinh_ThanhPho nvarchar(100)
+alter table ThongTinVanChuyen add Quan_Huyen nvarchar(100)
+alter table ThongTinVanChuyen add Xa_Phuong nvarchar(100)
+alter table ThongTinVanChuyen add DiaChiCuThe nvarchar(255)
