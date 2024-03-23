@@ -465,3 +465,4 @@ INSERT INTO TheLoai(ten, MoTa) VALUES
 ('Bơi Lội', 'Môn thể thao nước phổ biến, giúp cải thiện sức khỏe toàn diện và tăng cường sức bền.')
 -- thêm thuộc tính deafault vào bảng địa chỉ
 alter table DiaChi add deafault bit
+sp_rename 'DiaChi.deafault', 'IsDefault','COLUMN';
