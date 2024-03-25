@@ -473,3 +473,6 @@ alter table ThongTinVanChuyen add Tinh_ThanhPho nvarchar(100)
 alter table ThongTinVanChuyen add Quan_Huyen nvarchar(100)
 alter table ThongTinVanChuyen add Xa_Phuong nvarchar(100)
 alter table ThongTinVanChuyen add DiaChiCuThe nvarchar(255)
+
+-- xoá bảng sản phẩm _ khuyễn mãi
+drop table SanPham_KhuyenMai
