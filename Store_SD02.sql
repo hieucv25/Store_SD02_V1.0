@@ -476,3 +476,6 @@ alter table ThongTinVanChuyen add DiaChiCuThe nvarchar(255)
 
 -- xoá bảng sản phẩm _ khuyễn mãi
 drop table SanPham_KhuyenMai
+-- Thêm Khoá Ngoại Bảng Thông Báo
+alter table ThongBao add IdNhanVien int
+alter table ThongBao add constraint NhanVien_ThongBao FOREIGN KEY(IdNhanVien) REFERENCES NhanVien(Id)
