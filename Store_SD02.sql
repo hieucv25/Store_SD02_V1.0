@@ -479,3 +479,6 @@ drop table SanPham_KhuyenMai
 -- Thêm Khoá Ngoại Bảng Thông Báo
 alter table ThongBao add IdNhanVien int
 alter table ThongBao add constraint NhanVien_ThongBao FOREIGN KEY(IdNhanVien) REFERENCES NhanVien(Id)
+-- Sửa thuộc tính bảng khuyễn mãi
+Alter Table KhuyenMai drop column TrangThai
+Alter Table KhuyenMai add TrangThai bit
