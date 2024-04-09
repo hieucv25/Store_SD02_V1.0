@@ -482,3 +482,14 @@ alter table ThongBao add constraint NhanVien_ThongBao FOREIGN KEY(IdNhanVien) RE
 -- Sửa thuộc tính bảng khuyễn mãi
 Alter Table KhuyenMai drop column TrangThai
 Alter Table KhuyenMai add TrangThai bit
+-- Thêm thuộc tính
+Alter Table KhuyenMai add GiaTriDonHangApDung int
+-- Sửa thuộc tính
+Alter Table KhuyenMai alter column NgayBatDau datetime
+Alter Table KhuyenMai alter column NgayKetThuc datetime
+-- Thêm thuộc tính
+alter table DonHang add IdKhuyenMai int default null
+alter table DonHang add constraint FK_DonHang_KhuyenMai foreign key(IdKhuyenMai) references KhuyenMai(id)
+-- Xoá Bảng
+Drop Table TroChuyen
+Drop Table DanhSachYeuThich
