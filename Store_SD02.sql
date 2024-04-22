@@ -493,3 +493,6 @@ alter table DonHang add constraint FK_DonHang_KhuyenMai foreign key(IdKhuyenMai)
 -- Xoá Bảng
 Drop Table TroChuyen
 Drop Table DanhSachYeuThich
+
+Alter Table KhuyenMai add LoaiKhachHangApDung int default 0
+
